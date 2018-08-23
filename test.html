@@ -15,16 +15,16 @@
 	//declare variables & functions
 	00ui("helloUrl < 'home.json'")
 	00ui("homeUrl  < 'home.json'")
-	00ui("load     < url => #custom js function for load and parse json file")
-	00ui("numInc   < num => ++num")//inc and return number
-	//template for render
-	00ui("render[body]   =  :append h1   :content this is title: $title")
-	00ui("render[body]   += :append span :content this is content: $content")
+	00ui("load     <  url => #custom js function for load and parse json file")
+	00ui("numInc   <  function(v){return ++v}")
+	00ui("render   <  json => :append h1    :content this is title:   json.title")
+	00ui("render  +<  json => :append span  :content this is content: json.content")
 	//int page
-	00ui(">find> body >render> load helloUrl")
+	00ui(":find body :render load helloUrl")
 	//actions
-	00ui(":find menu  :append a.itemmenu :content 'Main page'     :click :find body :render load homeUrl")	
-	00ui(":f 	menu  :a 	  a.itemmenu :co      'Test page one' :cl    :f    body :r      l    _h")//short expression, l- load, _h- href
+	00ui(":find menu  :append a.itemmenu :content 'Main page'     :click :find body :content render load homeUrl")	
+	//short expression, l- load, _h- href
+	00ui(":f 	menu  :a 	  a.itemmenu :co      'Test page one' :cl    :f    body :content render l   _h")
 	00ui(":find calc  :click :content inc     _content")
 	00ui(":find calc2 :click :content inc inc _content")
 	00ui(":f    calc2 :cl    :co      i   i i _c")
