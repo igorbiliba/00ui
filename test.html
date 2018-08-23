@@ -17,8 +17,8 @@
 	00ui("homeUrl  < 'home.json'")
 	00ui("load     <  url => #custom js function for load and parse json file")
 	00ui("numInc   <  function(v){return ++v}")
-	00ui("render   <  json => :append h1    :content this is title:   json.title")
-	00ui("render  +<  json => :append span  :content this is content: json.content")
+	00ui("render   <  json => :append h1    :content 'this is title:'   json.title")
+	00ui("render  +<  json => :append span  :content 'this is content:' json.content")
 	//int page
 	00ui(":find body :render load helloUrl")
 	//actions
